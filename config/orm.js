@@ -16,13 +16,13 @@ var orm = {
         console.log(result);
       });
     },
-    updateOne: function(burger_name, devoured, id) {
+    updateOne: function(colname, id) {
       var queryString =
-        "UPDATE burgers SET ?? WHERE ??";
+        "UPDATE burgers SET burger_name= ? WHERE id = ?";
   
       connection.query(
         queryString,
-        [burger_name, devoured, id],
+        [colname, id],
         function(err, result) {
           if (err) throw err;
           console.log(result);

@@ -15,6 +15,7 @@ app.set("view engine", "handlebars");
 
 // orm.selectAll()
 
+// orm.updateOne("Beef burger", 1)
 
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
