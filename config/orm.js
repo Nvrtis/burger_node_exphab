@@ -10,26 +10,22 @@ var orm = {
     },
     insertOne: function(burger_name, devoured) {
       var queryString = "INSERT INTO burgers (burger_name) VALUES (?)  ";
-      console.log(queryString);
-      connection.query(queryString, [burger_name, devoured], (err, result)=> {
+      connection.query(queryString, [burger_name], (err, result)=> {
         if (err) throw err;
         console.log(result);
       });
     },
     updateOne: function(colname, id) {
       var queryString =
-        "UPDATE burgers SET burger_name= ? WHERE id = ?";
+        "UPDATE burgers SET devoured = ? WHERE id = ?";
   
-      connection.query(
-        queryString,
-        [colname, id],
-        function(err, result) {
+      connection.query(queryString,[colname, id], (err, result) =>{
           if (err) throw err;
           console.log(result);
         }
       );
     }
-  };
+  }
   
   module.exports = orm;
   

@@ -1,6 +1,13 @@
 const orm = require("../config/orm")
 
+const burger = {
+    selectAll: function(cb) {
+        orm.selectAll(function(res) {
+            cb(res)
 
+        })
+    }
+}
 
 // orm.insertOne("Chicken burger", "true")
 
@@ -12,4 +19,4 @@ const orm = require("../config/orm")
 
 //     * Export at the end of the `burger.js` file.
 
-// module.exports = burger
+module.exports = burger

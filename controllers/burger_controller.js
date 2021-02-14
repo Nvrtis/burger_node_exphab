@@ -1,20 +1,26 @@
 var express = require("express");
-var app = express();
-// //    * `burger.js`
+var router = express.Router();
+var burger = require("../models/burger.js");
 // 4. Create the `router` for the app, and export the `router` at the end of your file.
-app.get("/", (req,res)=>{
-
+router.get("/", (req,res)=>{
+burger.selectAll(function(result) {
+    const burgerObj = {
+        burger: result
+    }
+    console.log(burgerObj);
+    res.render("index", burgerObj)
+})
 
 })
 
-app.post("/burger/add", (req,res)=>{
+router.post("/burger/add", (req,res)=>{
     
 
 })
 
-app.put("/burger/update", (req,res)=>{
+router.put("/burger/:id", (req,res)=>{
     
 
 })
 
-// module.exports = router
+module.exports = router
