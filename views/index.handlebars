@@ -36,7 +36,7 @@
                 {{#unless devoured}}
                 <span>{{this.id}} - {{this.burger_name}}</span>
                 <button type="button" class="eatburger btn btn-warning" data-id="{{this.id}}"
-                    data-newDevoured="{{devour}}"><span>Eat</span></button>
+                    data-newDevoured="{{this.devoured}}"><span>Eat</span></button>
                 <hr>
                 {{/unless}}
                 {{/each}}
@@ -49,7 +49,7 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                <span> {{this.id}} - {{this.burger_name}} </span>
                 <button type="button" class="removeburger btn btn-danger" data-id="{{this.id}}"
                     data-newDevoured="{{devour}}"><span>Delete</span></button>
                 <hr>

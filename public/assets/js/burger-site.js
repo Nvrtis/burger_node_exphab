@@ -11,32 +11,32 @@ $(document).ready(function() {
             data: newBurger
         }).then(
             () => {
-                console.log("created new burger");
                 location.reload();
-            }
-        );
+            });
     });
-
 
     $(".eatburger").on("click", function(event) {
         event.preventDefault();
-
         var id = $(this).data("id");
         var newDevouredState = {
-            devoured: !devoured
-        };
-
-        // send the PUT request
+            devoured: 1};
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newDevouredState
         }).then(
             function() {
-                console.log("changed devoured to", newDevouredState);
-                // reload the page to get the updated list
                 location.reload();
             }
         );
+    });
+
+    $(".removeburger").on("click", function(event) {
+        event.preventDefault();
+        var id = $(this).data("id");
+        $.ajax({
+            type: "DELETE",
+            url: "/api/burgers/" + id
+        }).then(location.reload());
     });
 
 
