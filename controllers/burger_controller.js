@@ -1,24 +1,33 @@
 var express = require("express");
 var router = express.Router();
+// import the model (burger.js) to use its database function
 var burger = require("../models/burger.js");
-// 4. Create the `router` for the app, and export the `router` at the end of your file.
-router.get("/", (req,res)=>{
-burger.selectAll(function(result) {
-    const burgerObj = {
-        burger: result
-    }
-    console.log(burgerObj);
-    res.render("index", burgerObj)
-})
 
-})
-
+// create route for get all burgers
+router.get("/", function(req, res) {
+    burger.selectAll(function(result) {
+        var burgerObj = {
+            burgers: result
+        };
+        res.render("index", burgerObj);
+    });
+});
 
 
-// router.post("/burger/add", (req,res)=>{
-    
 
-// })
+router.post("/api/burgers", function(req, res){
+    console.log(req.body);
+    burger.insertOne( ["name"], [req.body.burger_name], function (result) {
+        res.json(result);
+    })
+});
+
+router.put("/api/burgers/:id", function(req, res){
+    const id = req.params.id
+burger.updateOne()
+}
+)
+
 
 // router.put("/burger/:id", (req,res)=>{
     

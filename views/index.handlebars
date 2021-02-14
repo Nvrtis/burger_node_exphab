@@ -1,13 +1,16 @@
 
 <div class="container">
 
-    <div class="jumbotron">
+    <div class="container">
         <div class="row">
-            <div class="col-md-8" id="">
-                <h1>Eat-Da-Burger</h1>
+            <div class="col-md-12 text-center" id="">
+                <h1>Burger Castle</h1>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/147/310/small/free-hand-drawn-vector-burger-illustration.jpg" alt="">
             </div>
 
-            <div class="col-md-4">
+        <div class="row">
+
+            <div class="col-md-12 text-center">
                 <h2>Add a Burger</h2>
                 <form class="create-form">
 
@@ -21,38 +24,39 @@
             </div>
         </div>
     </div>
+    </div>
 
-        <div class="col-md-5 to-eat-container">
+        <div class="row">
+
+        <div class="col-md-6 to-eat-container">
                 <h2>Burgers to Eat:</h2>
             <hr>
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <span><strong>{{this.id}} - {{this.burger_name}} </strong></span>
+                <span>{{this.id}} - {{this.burger_name}}</span>
                 <button type="button" class="eatburger btn btn-warning" data-id="{{this.id}}"
-                    data-newDevoured="{{devour}}"><span>Devour</span></button>
+                    data-newDevoured="{{devour}}"><span>Eat</span></button>
                 <hr>
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
 
-        <div class="col-md-2">
-        </div>
-
-        <div class="col-md-5 devoured-container">
-                <h2>Burgers Devoured:</h2>
+        <div class="col-md-6 devoured-container">
+                <h2>Burgers Eaten:</h2>
             <hr>
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
                 <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
                 <button type="button" class="removeburger btn btn-danger" data-id="{{this.id}}"
-                    data-newDevoured="{{devour}}"><span>Trash</span></button>
+                    data-newDevoured="{{devour}}"><span>Delete</span></button>
                 <hr>
                 {{/if}}
                 {{/each}}
             </ul>
+        </div>
         </div>
 
 </div>

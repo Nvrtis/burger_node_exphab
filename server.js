@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(router)
+app.use(router);
 
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);

@@ -1,8 +1,8 @@
 const orm = require("../config/orm")
 
 const burger = {
-    selectAll: function() {
-        orm.selectAll(function(res) {
+    selectAll: function(cb) {
+        orm.selectAll("burgers",function(res) {
             cb(res)
 
         })
@@ -15,6 +15,12 @@ const burger = {
     },
     updateOne: function(devoured, id,  cb) {
         orm.updateOne(devoured, id, function(res) {
+            cb(res)
+
+        })
+    },
+    deleteOne:function(id,  cb) {
+        orm.deleteOne(id, function(res) {
             cb(res)
 
         })

@@ -2,8 +2,8 @@ var connection = require("./connection.js");
 
 var orm = {
     selectAll: function(burgers, cb) {
-      var queryString = "SELECT * FROM ?";
-      connection.query(queryString,burgers, (err, result)=> {
+      var queryString = "SELECT * FROM "+burgers+";";
+      connection.query(queryString, (err, result)=> {
         if (err) throw err;
         cb(result);
       });
@@ -24,8 +24,18 @@ var orm = {
           cb(result);
         }
       );
-    }
+    },
+  deleteOne: function(id, cb) {
+    var queryString =
+      "DELETE FROM burgers WHERE id = ?";
+
+    connection.query(queryString,id, (err, result) =>{
+        if (err) throw err;
+        cb(result);
+      }
+    );
   }
+}
   
   module.exports = orm;
   
