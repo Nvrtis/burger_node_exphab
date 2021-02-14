@@ -13,14 +13,16 @@ burger.selectAll(function(result) {
 
 })
 
-router.post("/burger/add", (req,res)=>{
+
+
+// router.post("/burger/add", (req,res)=>{
     
 
-})
+// })
 
-router.put("/burger/:id", (req,res)=>{
+// router.put("/burger/:id", (req,res)=>{
     
 
-})
+// })
 
 module.exports = router
