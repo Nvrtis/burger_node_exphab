@@ -1,6 +1,45 @@
-body {
-    background-image: url('https://img.freepik.com/free-photo/black-chalk-board-texture_89245-170.jpg?size=626&ext=jpg');
+body, html {
+    height: 100%;
+  }
+
+.bg {
+    background-image: url('https://i.pinimg.com/originals/b4/76/9e/b4769e3a52766f30e86b375391c84441.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
+
+    color: white;
+}
+
+#addburger {
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/5b385f49671425.58bb77365d0af.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+color: black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
+
+img {
+    border-radius: 50%;
+    height: 130px;
+    width: 170px;
+  }
+
+  .form {
+      border:black solid;
+      width: 350px;
+      margin: 0 auto;
+      padding: 10px;
+      border-radius: 10px;
+  }
+
+  #subbutton {
+      margin-top: 5px;
+  }
+
+  h1{
+      font-weight: bolder;
+  }

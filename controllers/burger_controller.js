@@ -4,8 +4,8 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // create route for get all burgers
-router.get("/", function(req, res) {
-    burger.selectAll(function(result) {
+router.get("/", function (req, res) {
+    burger.selectAll(function (result) {
         var burgerObj = {
             burgers: result
         };
@@ -13,24 +13,24 @@ router.get("/", function(req, res) {
     });
 });
 
-
-
-router.post("/api/burgers", function(req, res){
-    console.log(req.body);
-    burger.insertOne( ["name"], [req.body.burger_name], function (result) {
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne([req.body.burger_name], (result) => {
         res.json(result);
     })
 });
 
-router.put("/api/burgers/:id", function(req, res){
+router.put("/api/burgers/:id", function (req, res) {
     const id = req.params.id
-burger.updateOne()
+
+    burger.updateOne([req.body.devoured, id], (result) => {
+        res.json(result);
+    })
 }
 )
 
 
 // router.put("/burger/:id", (req,res)=>{
-    
+
 
 // })
 
