@@ -39,15 +39,4 @@ $(document).ready(function() {
         }).then(location.reload());
     });
 
-
-
-
-
-
-
-
-
-
-
-
 })
