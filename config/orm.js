@@ -35,7 +35,7 @@ var orm = {
       }
     );
   }
-}.catch(err => {console.log(err)})
+}
   
   module.exports = orm;
   
