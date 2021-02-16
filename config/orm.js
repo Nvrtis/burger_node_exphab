@@ -1,6 +1,7 @@
 var connection = require("./connection.js");
-
+// all our MySQL code that gets accessed with our burger controller 
 var orm = {
+  // shows all
     selectAll: function(burgers, cb) {
       var queryString = "SELECT * FROM "+burgers+";";
       connection.query(queryString, (err, result)=> {
@@ -8,6 +9,7 @@ var orm = {
         cb(result);
       });
     },
+    // insert a burger
     insertOne: function(burger_name, cb) {
       var queryString = "INSERT INTO burgers (burger_name) VALUES (?)  ";
       connection.query(queryString, [burger_name], (err, result)=> {
@@ -15,6 +17,7 @@ var orm = {
         cb(result);
       });
     },
+    // update the burger with devoured = true
     updateOne: function(colname, id, cb) {
       var queryString =
         "UPDATE burgers SET devoured = ? WHERE id = ?";
@@ -25,6 +28,7 @@ var orm = {
         }
       );
     },
+    // deletes burger from id
   deleteOne: function(id, cb) {
     var queryString =
       "DELETE FROM burgers WHERE id = ?";

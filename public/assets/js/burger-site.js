@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+    
+    // Send information about the new burger to the back end
     $(".create-form").on("submit", (e) => {
         e.preventDefault();
         var newBurger = {
@@ -15,6 +16,7 @@ $(document).ready(function() {
             });
     });
 
+// Sends Update of information about the burger to the backend
     $(".eatburger").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
@@ -30,6 +32,7 @@ $(document).ready(function() {
         );
     });
 
+    // sends a delete request to the backend
     $(".removeburger").on("click", function(event) {
         event.preventDefault();
         var id = $(this).data("id");
