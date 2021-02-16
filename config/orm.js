@@ -6,7 +6,7 @@ var orm = {
       connection.query(queryString, (err, result)=> {
         if (err) throw err;
         cb(result);
-      });
+      }).catch(err=>console.log(err));
     },
     insertOne: function(burger_name, cb) {
       var queryString = "INSERT INTO burgers (burger_name) VALUES (?)  ";
